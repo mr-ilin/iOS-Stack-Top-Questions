@@ -18,9 +18,17 @@ class QuestionsViewController: UIViewController {
         title = "Top questions"
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        configure()
+        
+        dataModel.fetchTopQuestions()
+    }
+}
+
+extension QuestionsViewController {
+    private func configure() {
+        tableView.delegate = self
         tableView.dataSource = self
         dataModel.delegate = self
-        dataModel.fetchTopQuestions()
     }
 }
 
@@ -48,6 +56,12 @@ extension QuestionsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataModel.questions.count
+    }
+}
+
+extension QuestionsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // ...
     }
 }
 
