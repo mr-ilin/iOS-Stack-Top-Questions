@@ -8,7 +8,7 @@
 import Foundation
 
 protocol QuestionsDataModelDelegate {
-    func updateData()
+    func updateQuestionsPresentation()
 }
 
 class QuestionsDataModel {
@@ -34,10 +34,10 @@ class QuestionsDataModel {
                 // ?
             }
             
-//            self?.questions = questions ?? []
-            self?.questions = TestData.Questions
+            self?.questions = questions ?? []
+//            self?.questions = TestData.Questions
             self?.isLoading = false
-            self?.delegate?.updateData()
+            self?.delegate?.updateQuestionsPresentation()
         }
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 class QuestionsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     private var dataModel = QuestionsDataModel()
 
     override func viewDidLoad() {
@@ -44,12 +45,12 @@ extension QuestionsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell.identifier, for: indexPath) as! QuestionTableViewCell
         
         let question = dataModel.questions[indexPath.row]
-        cell.title.text = question.title
-        cell.tags.text = tags(question: question)
-        cell.date.text = question.date.description
-        cell.score.text = String(question.score)
-        cell.answersCount.text = String(question.answerCount)
-        cell.viewCount.text = String(question.viewCount)
+        cell.configureCell(title: question.title,
+                           tags: question.tags,
+                           date: question.date,
+                           score: question.score,
+                           answersCount: question.answerCount,
+                           viewsCount: question.viewCount)
         
         return cell
     }
@@ -59,6 +60,8 @@ extension QuestionsViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Table View Delegate
+
 extension QuestionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // ...
@@ -66,7 +69,7 @@ extension QuestionsViewController: UITableViewDelegate {
 }
 
 extension QuestionsViewController: QuestionsDataModelDelegate {
-    func updateData() {
+    func updateQuestionsPresentation() {
         self.tableView.reloadData()
     }
 }

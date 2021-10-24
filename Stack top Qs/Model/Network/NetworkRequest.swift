@@ -13,6 +13,7 @@ import UIKit
 protocol NetworkRequest: AnyObject {
     associatedtype ModelType
     func decode(_ data: Data) -> ModelType?
+    /// Execute request on backfround thread, with completion closure execution on main thread
     func execute(withCompletion completion: @escaping (ModelType?, NetworkError?) -> Void)
 }
 
