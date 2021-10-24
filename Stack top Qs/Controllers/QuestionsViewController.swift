@@ -9,9 +9,12 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    
     private var dataModel = QuestionsDataModel()
+    
+    private var questionsView: QuestionsView! {
+        guard isViewLoaded else { return nil }
+        return (view as! QuestionsView)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +22,15 @@ class QuestionsViewController: UIViewController {
         title = "Top questions"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        configure()
-        
+        configureDelegation()
         dataModel.fetchTopQuestions()
     }
 }
 
 extension QuestionsViewController {
-    private func configure() {
-        tableView.delegate = self
-        tableView.dataSource = self
+    private func configureDelegation() {
+        questionsView.tableView.delegate = self
+        questionsView.tableView.dataSource = self
         dataModel.delegate = self
     }
 }
@@ -42,10 +44,10 @@ extension QuestionsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell.identifier, for: indexPath) as! QuestionTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionCell.identifier, for: indexPath) as! QuestionCell
         
         let question = dataModel.questions[indexPath.row]
-        cell.configureCell(title: question.title,
+        cell.setupCell(title: question.title,
                            tags: question.tags,
                            date: question.date,
                            score: question.score,
@@ -69,8 +71,8 @@ extension QuestionsViewController: UITableViewDelegate {
 }
 
 extension QuestionsViewController: QuestionsDataModelDelegate {
-    func updateQuestionsPresentation() {
-        self.tableView.reloadData()
+    func updateQuestionsView() {
+        self.questionsView.tableView.reloadData()
     }
 }
 

@@ -21,9 +21,11 @@
 		B5AE66922724400E00EF80DB /* QuestionsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66912724400E00EF80DB /* QuestionsDataModel.swift */; };
 		B5AE66942724427B00EF80DB /* QuestionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66932724427B00EF80DB /* QuestionDataModel.swift */; };
 		B5AE669627244EB100EF80DB /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = B5AE669527244EB100EF80DB /* Questions.json */; };
-		B5AE66982724506E00EF80DB /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66972724506E00EF80DB /* QuestionTableViewCell.swift */; };
+		B5AE66982724506E00EF80DB /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66972724506E00EF80DB /* QuestionCell.swift */; };
 		B5AE669C2724BBF700EF80DB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE669B2724BBF700EF80DB /* DetailViewController.swift */; };
 		B5AE66A12725DB7400EF80DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66A02725DB7400EF80DB /* Extensions.swift */; };
+		B5AE66A32725E00300EF80DB /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66A22725E00300EF80DB /* QuestionsView.swift */; };
+		B5AE66A52725E40A00EF80DB /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66A42725E40A00EF80DB /* UserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,9 +45,11 @@
 		B5AE66912724400E00EF80DB /* QuestionsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsDataModel.swift; sourceTree = "<group>"; };
 		B5AE66932724427B00EF80DB /* QuestionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataModel.swift; sourceTree = "<group>"; };
 		B5AE669527244EB100EF80DB /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
-		B5AE66972724506E00EF80DB /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		B5AE66972724506E00EF80DB /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		B5AE669B2724BBF700EF80DB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = "Stack top Qs/Controllers/DetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B5AE66A02725DB7400EF80DB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B5AE66A22725E00300EF80DB /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
+		B5AE66A42725E40A00EF80DB /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				B5AE66A02725DB7400EF80DB /* Extensions.swift */,
-				B5AE66972724506E00EF80DB /* QuestionTableViewCell.swift */,
+				B5AE66972724506E00EF80DB /* QuestionCell.swift */,
+				B5AE66A22725E00300EF80DB /* QuestionsView.swift */,
+				B5AE66A42725E40A00EF80DB /* UserView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,13 +227,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5AE669C2724BBF700EF80DB /* DetailViewController.swift in Sources */,
-				B5AE66982724506E00EF80DB /* QuestionTableViewCell.swift in Sources */,
+				B5AE66982724506E00EF80DB /* QuestionCell.swift in Sources */,
 				B5AE668C2722D64F00EF80DB /* NetworkRequest.swift in Sources */,
 				B5AE66922724400E00EF80DB /* QuestionsDataModel.swift in Sources */,
 				B5AE669027243A2F00EF80DB /* NetworkError.swift in Sources */,
 				B5AE66882722D02800EF80DB /* Question.swift in Sources */,
 				B5AE66862722CC2800EF80DB /* User.swift in Sources */,
+				B5AE66A52725E40A00EF80DB /* UserView.swift in Sources */,
 				B5AE66942724427B00EF80DB /* QuestionDataModel.swift in Sources */,
+				B5AE66A32725E00300EF80DB /* QuestionsView.swift in Sources */,
 				B5AE66A12725DB7400EF80DB /* Extensions.swift in Sources */,
 				B5AE66732722CAB400EF80DB /* QuestionsViewController.swift in Sources */,
 				B5AE666F2722CAB400EF80DB /* AppDelegate.swift in Sources */,

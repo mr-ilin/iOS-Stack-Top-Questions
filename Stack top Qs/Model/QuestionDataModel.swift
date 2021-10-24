@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol QuestionDataModelDelegate {
+    func updateQuestionView()
+}
+
 class QuestionDataModel {
     var question: Question
     var isLoading = false

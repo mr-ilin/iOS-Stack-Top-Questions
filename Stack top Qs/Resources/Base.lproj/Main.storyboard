@@ -12,8 +12,9 @@
         <!--Questions View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="QuestionsViewController" customModule="Stack_top_Qs" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="QuestionsView" customModule="Stack_top_Qs" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -21,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="150" id="uKy-KF-iF0" customClass="QuestionTableViewCell" customModule="Stack_top_Qs" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="150" id="uKy-KF-iF0" customClass="QuestionCell" customModule="Stack_top_Qs" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uKy-KF-iF0" id="hFK-Fg-0fM">
@@ -104,19 +105,19 @@
                             <constraint firstItem="lYE-Mt-jZz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PjQ-jx-cpT"/>
                             <constraint firstItem="lYE-Mt-jZz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WiQ-Jb-Rhq"/>
                         </constraints>
+                        <connections>
+                            <outlet property="tableView" destination="lYE-Mt-jZz" id="54s-nt-imm"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="qSN-iD-VMS"/>
-                    <connections>
-                        <outlet property="tableView" destination="lYE-Mt-jZz" id="Cgm-1E-e6F"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KDf-ll-eD8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghl-cL-xmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TM1-ma-dug" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rwe-vh-g4I">
@@ -128,25 +129,8 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zDl-vw-hiI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ghl-cL-xmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
-        </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="iCl-fz-3wH">
-            <objects>
-                <viewController id="w0F-io-9K0" customClass="DetailViewController" customModule="Stack_top_Qs" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v7Y-1t-08t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="5AN-aJ-sPG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="hSX-3O-uZc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vui-Qw-DKr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1987" y="138"/>
         </scene>
     </scenes>
     <resources>
