@@ -26,6 +26,7 @@
 		B5AE66A12725DB7400EF80DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66A02725DB7400EF80DB /* Extensions.swift */; };
 		B5AE66A32725E00300EF80DB /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66A22725E00300EF80DB /* QuestionsView.swift */; };
 		B5AE66A52725E40A00EF80DB /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66A42725E40A00EF80DB /* UserView.swift */; };
+		B5AE66A72725F19F00EF80DB /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AE66A62725F19F00EF80DB /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B5AE66A02725DB7400EF80DB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B5AE66A22725E00300EF80DB /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		B5AE66A42725E40A00EF80DB /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		B5AE66A62725F19F00EF80DB /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				B5AE66972724506E00EF80DB /* QuestionCell.swift */,
 				B5AE66A22725E00300EF80DB /* QuestionsView.swift */,
 				B5AE66A42725E40A00EF80DB /* UserView.swift */,
+				B5AE66A62725F19F00EF80DB /* QuestionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5AE66A72725F19F00EF80DB /* QuestionView.swift in Sources */,
 				B5AE669C2724BBF700EF80DB /* DetailViewController.swift in Sources */,
 				B5AE66982724506E00EF80DB /* QuestionCell.swift in Sources */,
 				B5AE668C2722D64F00EF80DB /* NetworkRequest.swift in Sources */,

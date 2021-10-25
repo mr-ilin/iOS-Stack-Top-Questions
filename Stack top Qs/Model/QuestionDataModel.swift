@@ -18,6 +18,8 @@ class QuestionDataModel {
     private var questionRequest: APIRequest<QuestionResource>?
     private var imageRequest: ImageRequest?
     
+    var delegate: QuestionDataModelDelegate?
+    
     init(question: Question) {
         self.question = question
     }
@@ -33,6 +35,7 @@ class QuestionDataModel {
             guard let question = questions?.first else { return }
             self?.question = question
             self?.loadOwnerAvatar()
+            self?.delegate?.updateQuestionView()
         }
     }
 }

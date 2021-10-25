@@ -21,13 +21,13 @@ class QuestionCell: UITableViewCell {
     
     
     /// Sets cell data values
-    func setupCell(title: String, tags: [String], date: Date, score: Int, answersCount: Int, viewsCount: Int) {
-        self.title.text = title
-        self.tags.text = tagsString(tags: tags)
-        self.date.text = date.formattedDate
-        self.score.text = String(score)
-        self.answersCount.text = String(answersCount)
-        self.viewCount.text = viewsCount.thousandsFormatting
+    func setupCell(question: Question) {
+        self.title.text = question.title
+        self.tags.text = tagsString(tags: question.tags)
+        self.date.text = question.date.formattedDate
+        self.score.text = String(question.score)
+        self.answersCount.text = String(question.answerCount)
+        self.viewCount.text = question.viewCount.thousandsFormatting
     }
     
     private func tagsString(tags: [String]) -> String {

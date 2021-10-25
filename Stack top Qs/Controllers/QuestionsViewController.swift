@@ -9,7 +9,7 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
     
-    private var dataModel = QuestionsDataModel()
+    private let dataModel = QuestionsDataModel()
     
     private var questionsView: QuestionsView! {
         guard isViewLoaded else { return nil }
@@ -35,6 +35,14 @@ extension QuestionsViewController {
     }
 }
 
+// MARK: - Questions Data Model Delegate
+
+extension QuestionsViewController: QuestionsDataModelDelegate {
+    func updateQuestionsView() {
+        self.questionsView.tableView.reloadData()
+    }
+}
+
 // MARK: - Table View Data Source
 
 extension QuestionsViewController: UITableViewDataSource {
@@ -47,12 +55,7 @@ extension QuestionsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuestionCell.identifier, for: indexPath) as! QuestionCell
         
         let question = dataModel.questions[indexPath.row]
-        cell.setupCell(title: question.title,
-                           tags: question.tags,
-                           date: question.date,
-                           score: question.score,
-                           answersCount: question.answerCount,
-                           viewsCount: question.viewCount)
+        cell.setupCell(question: question)
         
         return cell
     }
@@ -66,13 +69,9 @@ extension QuestionsViewController: UITableViewDataSource {
 
 extension QuestionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // ...
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailController") as? DetailViewController {
+            vc.question = dataModel.questions[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
-
-extension QuestionsViewController: QuestionsDataModelDelegate {
-    func updateQuestionsView() {
-        self.questionsView.tableView.reloadData()
-    }
-}
-
