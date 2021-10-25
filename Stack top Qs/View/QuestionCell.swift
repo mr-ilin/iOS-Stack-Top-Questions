@@ -25,9 +25,23 @@ class QuestionCell: UITableViewCell {
         self.title.text = question.title
         self.tags.text = tagsString(tags: question.tags)
         self.date.text = question.date.formattedDate
-        self.score.text = String(question.score)
-        self.answersCount.text = String(question.answerCount)
-        self.viewCount.text = question.viewCount.thousandsFormatting
+        
+        configureLabel(score, text: String(question.score), systemImage: "arrowtriangle.up.circle")
+        configureLabel(answersCount, text: String(question.answerCount), systemImage: "ellipses.bubble")
+        configureLabel(viewCount, text: String(question.viewCount.thousandsFormatting), systemImage: "eye")
+    }
+    
+    private func configureLabel(_ label: UILabel, text: String, systemImage: String) {
+        let fullString = NSMutableAttributedString()
+        
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(systemName: systemImage)?.withTintColor(UIColor.systemTeal)
+        let imageString = NSAttributedString(attachment: imageAttachment)
+        
+        fullString.append(imageString)
+        fullString.append(NSAttributedString(string: " " + text))
+        
+        label.attributedText = fullString
     }
     
     private func tagsString(tags: [String]) -> String {
