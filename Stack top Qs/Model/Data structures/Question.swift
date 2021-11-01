@@ -19,7 +19,6 @@ struct Question: Identifiable {
     var owner: User?
 }
 
-// Maybe move to Network?
 extension Question: Decodable {
     enum CodingKeys: String, CodingKey {
         case score, title, body, tags, owner

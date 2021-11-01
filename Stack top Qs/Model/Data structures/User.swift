@@ -15,7 +15,7 @@ struct User {
     var profileImage: UIImage?
 }
 
-// Maybe move to Network?
+
 extension User: Decodable {
     enum CodingKeys: String, CodingKey {
         case reputation

@@ -81,6 +81,7 @@ class QuestionView: UIView {
             userView.topAnchor.constraint(equalTo: body.bottomAnchor, constant: 20),
             userView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20),
             userView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            userView.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     

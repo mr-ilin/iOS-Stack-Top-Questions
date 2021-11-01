@@ -34,14 +34,18 @@ class UserView: UIView {
     // MARK: setup view
     private func setupViews() {
         hStack = UIStackView()
+        hStack.distribution = .equalSpacing
+        hStack.alignment = .center
         hStack.translatesAutoresizingMaskIntoConstraints = false
         hStack.spacing = 16.0
         
+        let spacerView = UIView()
+        spacerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        
         imageView = UIImageView()
-        imageView.contentMode = .left
-        imageView.frame = CGRect(x: 0, y: 0, width: 48, height: 48)
+        imageView.contentMode = .scaleAspectFit
+        imageView.sizeToFit()
         imageView.layer.cornerRadius = 8.0
-        hStack.addArrangedSubview(imageView)
         
         let vStack = UIStackView()
         vStack.axis = .vertical
@@ -50,13 +54,17 @@ class UserView: UIView {
         
         nameLabel = UILabel()
         nameLabel.font = .preferredFont(forTextStyle: .headline)
-        vStack.addArrangedSubview(nameLabel)
         
         reputationLabel = UILabel()
         reputationLabel.font = .preferredFont(forTextStyle: .caption1)
+        
+        vStack.addArrangedSubview(nameLabel)
         vStack.addArrangedSubview(reputationLabel)
         
+        hStack.addArrangedSubview(spacerView)
+        hStack.addArrangedSubview(imageView)
         hStack.addArrangedSubview(vStack)
+        
         self.addSubview(hStack)
         
         setupConstraints()
@@ -68,6 +76,9 @@ class UserView: UIView {
             hStack.leftAnchor.constraint(equalTo: self.leftAnchor),
             hStack.rightAnchor.constraint(equalTo: self.rightAnchor),
             hStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            imageView.heightAnchor.constraint(equalTo: self.heightAnchor),
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
         ])
     }
     

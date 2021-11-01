@@ -35,7 +35,6 @@ class QuestionDataModel {
             guard let question = questions?.first else { return }
             self?.question = question
             self?.loadOwnerAvatar()
-            self?.delegate?.updateQuestionView()
         }
     }
 }
@@ -48,6 +47,7 @@ private extension QuestionDataModel {
         imageRequest.execute { [weak self] image, _ in
             self?.question.owner?.profileImage = image
             self?.isLoading = false
+            self?.delegate?.updateQuestionView()
         }
     }
 }
