@@ -15,6 +15,11 @@ class QuestionsViewController: UIViewController {
         guard isViewLoaded else { return nil }
         return (view as! QuestionsView)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        smoothDeselectRows()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +37,28 @@ extension QuestionsViewController {
         questionsView.tableView.delegate = self
         questionsView.tableView.dataSource = self
         dataModel.delegate = self
+    }
+    
+    private func smoothDeselectRows() {
+        let selectedIndexPaths = questionsView.tableView?.indexPathsForSelectedRows ?? []
+        
+        if let coordinator = transitionCoordinator {
+            coordinator.animate(alongsideTransition: { context in
+                selectedIndexPaths.forEach {
+                    self.questionsView.tableView?.deselectRow(at: $0, animated: context.isAnimated)
+                }
+            }, completion: { context in
+                if context.isCancelled {
+                    selectedIndexPaths.forEach {
+                        self.questionsView.tableView?.selectRow(at: $0, animated: false, scrollPosition: .none)
+                    }
+                }
+            })
+        } else {
+            selectedIndexPaths.forEach {
+                self.questionsView.tableView.deselectRow(at: $0, animated: false)
+            }
+        }
     }
 }
 
