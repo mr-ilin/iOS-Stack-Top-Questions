@@ -1,7 +1,8 @@
 # iOS-Stack-top-Questions
 
 <img src="Preview.gif"
-height="400">
+height="650"
+width="300">
 
 Приложение написано на Swift + UIKit, использует публичное API stackexchange, чтобы отображать топ 10 вопросов.
 
